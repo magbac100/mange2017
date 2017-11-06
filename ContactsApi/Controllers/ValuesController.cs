@@ -4,21 +4,25 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using ContactsApi.Models;
 namespace ContactsApi.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
+        // GET api/value
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Sanna", "Magnus" };
         }
 
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            person p = new person();
+            string pa = p.pers(id);
+            return pa;
+            //string pa = "lass";
+            //return pa;
         }
 
         // POST api/values
